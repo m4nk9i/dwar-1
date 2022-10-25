@@ -20,6 +20,7 @@ world.pickup(c);
 world.pickup(d);
 world.pickup(e);
 world.pickup(grunt);
+world.pickup(ent.Ent("carrot"));
 
 dist=processor.Processor("fries machine");
 dist.req_material.append("potattto");
