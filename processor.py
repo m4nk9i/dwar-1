@@ -1,5 +1,6 @@
 import ent
 class Processor(ent.Ent):
+  etype=ent.EntType.PROCESSOR;
   name=""
   owner=None
   inventory=[]   
@@ -60,6 +61,16 @@ class Processor(ent.Ent):
     print ("------- proc.printout")
     super().printout();
     print("prog:"+str(self.proc_prog));
+
+  def toJSON(self,indent):
+    self.tstr=super().toJSON(indent);
+    self.tstr+=indent+',\n'+indent+'"proc_speed": "'+str(self.proc_speed)+'",\n';
+    self.tstr+=indent+'"proc_prog": "'+str(self.proc_prog)+'",\n';
+    self.tstr+=indent+'"proc_ok": "'+str(self.proc_ok)+'",\n';
+    self.tstr+=indent+'"req_matrial":"fff",\n';
+    self.tstr+=indent+'"res_matrial":"res"\n';
+    return self.tstr;
+
 
 
 

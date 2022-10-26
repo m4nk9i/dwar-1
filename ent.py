@@ -1,7 +1,14 @@
+from enum import Enum
 
+class EntType(Enum):
+    UNKNOWN=0;
+    PERSON=1;
+    OBJECT=2;
+    PROCESSOR=3;
 
 
 class Ent:
+    etype=EntType.UNKNOWN;
     name=""
     owner=None
     inventory=[]   
@@ -29,17 +36,24 @@ class Ent:
         print ("ENT-END:"+self.name)
 
     def toJSON(self,ident):
-        self.retstr=ident+"{\n"
+        self.retstr=""        
+        #self.retstr=ident+"{\n"
+        self.retstr+=ident+'"type": "'+str(self.etype)+'",\n';
         self.retstr+=ident+'"name": "'+self.name+'",\n';
-        self.retstr+=ident+'"position": "'+str(self.pos[0])+', '+str(self.pos[1])+' ",\n';
+        self.retstr+=ident+'"position": "'+str(self.pos[0])+', '+str(self.pos[1])+' "';
         if (len(self.inventory)>0):
-            self.retstr+=ident+'"inventory":[\n';            
+            self.retstr+=',\n'+ident+'"inventory":[\n';            
             for self.t in self.inventory:
-                self.retstr+=ident+'  {\n'
+                self.retstr+=ident+'{\n'
                 self.retstr+=self.t.toJSON(ident+"    ")
-                self.retstr+=ident+'  },\n'
+                if self.t==self.inventory[-1]:
+                    self.retstr+='\n'+ident+'}\n'    
+                else:
+                    self.retstr+='\n'+ident+'},\n'
             self.retstr+=ident+']\n'
-        self.retstr+=ident+"},\n"
+ #       else:
+ #           self.retstr+="\n";
+ #       self.retstr+=ident+"},\n"
         return self.retstr;
     
 
