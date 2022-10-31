@@ -1,19 +1,30 @@
 from enum import Enum
 
 class EntType(Enum):
-    UNKNOWN=0;
-    PERSON=1;
-    OBJECT=2;
-    PROCESSOR=3;
+    ET_UNKNOWN=0;
+    ET_PERSON=1;
+    ET_OBJECT=2;
+    ET_PRODUCE=3;
+    ET_PROCESSOR=4;
+
+class ObjectType(Enum):
+    OT_UNKNOWN=0;
+    OT_PRODUCE_BANANA=101;
+    OT_PRODUCE_POTATO=102;
+    OT_PRODUCE_CARROT=103;
+    OT_PRODUCE_FRIES=201;
+    OT_WASTE_PEELING=901;
 
 
 class Ent:
-    etype=EntType.UNKNOWN;
+    etype=EntType.ET_UNKNOWN;
     name=""
     owner=None
     inventory=[]   
     pos=[10,10]; 
-    def __init__(self,name):
+
+    def __init__ (self,type,name):
+        self.type=type
         self.name=name
         self.inventory=[]
         self.pos=[1,1]

@@ -1,6 +1,6 @@
 import ent
 class Processor(ent.Ent):
-  etype=ent.EntType.PROCESSOR;
+  etype=ent.EntType.ET_PROCESSOR;
   name=""
   owner=None
   inventory=[]   

@@ -5,14 +5,14 @@ import processor
 print ("===============================")
 
 
-world=ent.Ent("world");
+world=ent.Ent(ent.EntType.ET_UNKNOWN,"world");
 
-a=ent.Ent("stefan");
-b=ent.Ent("młot");
-c=ent.Ent("potato1");
-d=ent.Ent("potato2");
-e=ent.Ent("potato3");
-grunt=ent.Ent("ground");
+a=ent.Ent(ent.EntType.ET_UNKNOWN,"stefan");
+b=ent.Ent(ent.EntType.ET_UNKNOWN,"młot");
+c=ent.Ent(ent.EntType.ET_PRODUCE,"potato1");
+d=ent.Ent(ent.EntType.ET_PRODUCE,"potato2");
+e=ent.Ent(ent.EntType.ET_PRODUCE,"potato3");
+grunt=ent.Ent(ent.EntType.ET_UNKNOWN,"ground");
 
 world.pickup(a);
 world.pickup(b);
@@ -20,12 +20,12 @@ world.pickup(c);
 world.pickup(d);
 world.pickup(e);
 world.pickup(grunt);
-world.pickup(ent.Ent("carrot"));
+world.pickup(ent.Ent(ent.EntType.ET_PRODUCE,"carrot"));
 
-dist=processor.Processor("fries machine");
-dist.req_material.append("potattto");
-dist.res_material.append("fries");
-dist.res_material.append("obierki");
+dist=processor.Processor(ent.EntType.ET_PROCESSOR,"fries machine");
+dist.req_material.append(ent.ObjectType.OT_PRODUCE_POTATO);
+dist.res_material.append(ent.ObjectType.OT_PRODUCE_FRIES);
+dist.res_material.append(ent.ObjectType.OT_WASTE_PEELING);
 dist.pickup(d);
 dist.pickup(e);
 #dist.proc_ok=1;
