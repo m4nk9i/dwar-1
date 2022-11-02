@@ -1,0 +1,82 @@
+{
+  "type": "EntType.ET_UNKNOWN",
+  "name": "world",
+  "position": "1, 1 ",
+  "inventory":[
+  {
+      "type": "EntType.ET_UNKNOWN",
+      "name": "stefan",
+      "position": "10, 8 ",
+      "inventory":[
+      {
+          "type": "EntType.ET_UNKNOWN",
+          "name": "potato1",
+          "position": "1, 1 "
+      }
+      ]
+
+  },
+  {
+      "type": "EntType.ET_UNKNOWN",
+      "name": "m³ot",
+      "position": "6, 5 "
+  },
+  {
+      "type": "EntType.ET_UNKNOWN",
+      "name": "potato1",
+      "position": "1, 1 "
+  },
+  {
+      "type": "EntType.ET_UNKNOWN",
+      "name": "potato2",
+      "position": "1, 1 "
+  },
+  {
+      "type": "EntType.ET_UNKNOWN",
+      "name": "potato3",
+      "position": "1, 1 "
+  },
+  {
+      "type": "EntType.ET_UNKNOWN",
+      "name": "ground",
+      "position": "1, 1 ",
+      "inventory":[
+      {
+          "type": "EntType.ET_UNKNOWN",
+          "name": "m³ot",
+          "position": "6, 5 "
+      },
+      {
+          "type": "EntType.ET_PROCESSOR",
+          "name": "fries machine",
+          "position": "1, 1 ",
+          "inventory":[
+          {
+              "type": "EntType.ET_UNKNOWN",
+              "name": "potato2",
+              "position": "1, 1 "
+          },
+          {
+              "type": "EntType.ET_UNKNOWN",
+              "name": "potato3",
+              "position": "1, 1 "
+          }
+          ]
+          ,
+          "proc_speed": "0.1",
+          "proc_prog": "0.0",
+          "proc_ok": "0",
+          "req_matrial":"fff",
+          "res_matrial":"res"
+
+      }
+      ]
+
+  },
+  {
+      "type": "EntType.ET_UNKNOWN",
+      "name": "carrot",
+      "position": "1, 1 "
+  }
+  ]
+}

@@ -24,11 +24,14 @@ class Ent:
     pos=[10,10]; 
 
     def __init__ (self,type,name):
-        self.type=type
+        self.etype=type
         self.name=name
         self.inventory=[]
         self.pos=[1,1]
         owner=None
+
+
+
 
     def printout(self):
         print("---")
@@ -86,14 +89,30 @@ class Ent:
         obj.owner=whom
         whom.pickup(obj)
 
-    def find_in_inventory(self,name):
+    def find_in_inventory_by_name(self,name):
         tret=None;
         if len(self.inventory)>0:
             for x in self.inventory:
                 if (x.name==name):
                     tret=x;
         return tret;
+
+    def find_in_inventory_by_etype(self,oetype):
+        tret=None;
+        if len(self.inventory)>0:
+            for x in self.inventory:
+                if (x.etype==oetype):
+                    tret=x;
+        return tret;        
     
+    def find_in_inventory_by_otype(self,ootype):
+        tret=None;
+        if len(self.inventory)>0:
+            for x in self.inventory:
+                if (x.otype==ootype):
+                    tret=x;
+        return tret;  
+
     def proc_iter(self):
         pass
     

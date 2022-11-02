@@ -1,4 +1,5 @@
 import ent
+import produce
 class Processor(ent.Ent):
   etype=ent.EntType.ET_PROCESSOR;
   name=""
@@ -19,12 +20,14 @@ class Processor(ent.Ent):
     if (self.proc_prog==0.0):
       self.temp_list=[]
       for self.it in self.req_material:
-        self.t1=self.find_in_inventory(self.it)
+        self.t1=self.find_in_inventory_by_otype(self.it)
+
         if self.t1!=None:
           self.temp_list.append(self.t1)
           self.inventory.remove(self.t1)
           print("remove to processor :")
           print (self.t1)
+
       print ("self.temp_list")
       print (self.temp_list)
       print ("----")
@@ -51,7 +54,10 @@ class Processor(ent.Ent):
         self.proc_prog=0.0;
         if len(self.res_material)>0:
           for x in self.res_material:
-            t_obj=ent.Ent(x)
+            t_obj=produce.Produce(x)
+            t_obj.otype=x;
+            
+            print (t_obj.otype)
             self.pickup(t_obj)
           self.proc_ok=0;
             
@@ -61,6 +67,11 @@ class Processor(ent.Ent):
     print ("------- proc.printout")
     super().printout();
     print("prog:"+str(self.proc_prog));
+    print("req_material "+str(self.req_material))
+    print("res_material "+str(self.res_material))
+
+
+
 
   def toJSON(self,indent):
     self.tstr=super().toJSON(indent);

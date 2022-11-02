@@ -1,5 +1,6 @@
 import ent
 import processor
+import produce
 
 
 print ("===============================")
@@ -9,9 +10,9 @@ world=ent.Ent(ent.EntType.ET_UNKNOWN,"world");
 
 a=ent.Ent(ent.EntType.ET_UNKNOWN,"stefan");
 b=ent.Ent(ent.EntType.ET_UNKNOWN,"młot");
-c=ent.Ent(ent.EntType.ET_PRODUCE,"potato1");
-d=ent.Ent(ent.EntType.ET_PRODUCE,"potato2");
-e=ent.Ent(ent.EntType.ET_PRODUCE,"potato3");
+c=produce.Produce(ent.ObjectType.OT_PRODUCE_POTATO,"potato1");
+d=produce.Produce(ent.ObjectType.OT_PRODUCE_POTATO,"potato2");
+e=produce.Produce(ent.ObjectType.OT_PRODUCE_POTATO,"potato3");
 grunt=ent.Ent(ent.EntType.ET_UNKNOWN,"ground");
 
 world.pickup(a);
