@@ -77,9 +77,26 @@ class Processor(ent.Ent):
     self.tstr=super().toJSON(indent);
     self.tstr+=indent+',\n'+indent+'"proc_speed": "'+str(self.proc_speed)+'",\n';
     self.tstr+=indent+'"proc_prog": "'+str(self.proc_prog)+'",\n';
-    self.tstr+=indent+'"proc_ok": "'+str(self.proc_ok)+'",\n';
-    self.tstr+=indent+'"req_matrial":"fff",\n';
-    self.tstr+=indent+'"res_matrial":"res"\n';
+    self.tstr+=indent+'"proc_ok": "'+str(self.proc_ok)+'"';
+
+    if (len(self.req_material)>0):
+      self.tstr+=",\n"+indent+'"req_material":[';
+      for self.t in self.req_material:
+        self.tstr+='"'+self.t.name+'"';
+        if self.t==self.req_material[-1]:
+          self.tstr+=']';
+        else:
+          self.tstr+=', ';
+
+    if (len(self.res_material)>0):
+      self.tstr+=",\n"+indent+'"res_material":[';
+      for self.t in self.res_material:
+        self.tstr+='"'+self.t.name+'"';
+        if self.t==self.res_material[-1]:
+          self.tstr+=']\n';
+        else:
+          self.tstr+=', ';
+
     return self.tstr;
 
 

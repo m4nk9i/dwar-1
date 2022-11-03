@@ -52,7 +52,7 @@ class Ent:
     def toJSON(self,ident):
         self.retstr=""        
         #self.retstr=ident+"{\n"
-        self.retstr+=ident+'"type": "'+str(self.etype)+'",\n';
+        self.retstr+=ident+'"type": "'+str(self.etype.name)+'",\n';
         self.retstr+=ident+'"name": "'+self.name+'",\n';
         self.retstr+=ident+'"position": "'+str(self.pos[0])+', '+str(self.pos[1])+' "';
         if (len(self.inventory)>0):

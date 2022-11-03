@@ -17,5 +17,5 @@ class Produce(Ent):
 
     def toJSON(self,indent):        
         self.tstr=super().toJSON(indent);
-        self.tstr+=",\n"+indent+'"p_type":"'+str(self.otype)+'"\n';
+        self.tstr+=",\n"+indent+'"p_type":"'+str(self.otype.name)+'"\n';
         return self.tstr;
