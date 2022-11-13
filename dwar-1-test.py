@@ -55,7 +55,7 @@ jso+=world.toJSON("  ");
 #jso+=grunt.toJSON("  ");
 jso+="}\n"
 
-with open('base.json', 'w') as f:
+with open('.\\html\\base.json', 'w') as f:
     f.write(jso)
 
 print(jso);

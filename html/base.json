@@ -1,0 +1,94 @@
+{
+  "type": "ET_UNKNOWN",
+  "name": "world",
+  "position": "1, 1 ",
+  "inventory":[
+  {
+      "type": "ET_UNKNOWN",
+      "name": "stefan",
+      "position": "10, 8 ",
+      "inventory":[
+      {
+          "type": "ET_PRODUCE",
+          "name": "potato1",
+          "position": "1, 1 ",
+          "p_type":"OT_PRODUCE_POTATO"
+
+      }
+      ]
+
+  },
+  {
+      "type": "ET_UNKNOWN",
+      "name": "m³ot",
+      "position": "6, 5 "
+  },
+  {
+      "type": "ET_PRODUCE",
+      "name": "potato1",
+      "position": "1, 1 ",
+      "p_type":"OT_PRODUCE_POTATO"
+
+  },
+  {
+      "type": "ET_PRODUCE",
+      "name": "potato2",
+      "position": "1, 1 ",
+      "p_type":"OT_PRODUCE_POTATO"
+
+  },
+  {
+      "type": "ET_PRODUCE",
+      "name": "potato3",
+      "position": "1, 1 ",
+      "p_type":"OT_PRODUCE_POTATO"
+
+  },
+  {
+      "type": "ET_UNKNOWN",
+      "name": "ground",
+      "position": "1, 1 ",
+      "inventory":[
+      {
+          "type": "ET_UNKNOWN",
+          "name": "m³ot",
+          "position": "6, 5 "
+      },
+      {
+          "type": "ET_PROCESSOR",
+          "name": "fries machine",
+          "position": "1, 1 ",
+          "inventory":[
+          {
+              "type": "ET_PRODUCE",
+              "name": "",
+              "position": "1, 1 ",
+              "p_type":"OT_PRODUCE_FRIES"
+
+          },
+          {
+              "type": "ET_PRODUCE",
+              "name": "",
+              "position": "1, 1 ",
+              "p_type":"OT_WASTE_PEELING"
+
+          }
+          ]
+          ,
+          "proc_speed": "0.1",
+          "proc_prog": "0.1",
+          "proc_ok": "1",
+          "req_material":["OT_PRODUCE_POTATO"],
+          "res_material":["OT_PRODUCE_FRIES", "OT_WASTE_PEELING"]
+
+      }
+      ]
+
+  },
+  {
+      "type": "ET_PRODUCE",
+      "name": "carrot",
+      "position": "1, 1 "
+  }
+  ]
+}
